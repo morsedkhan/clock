@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #000;
+        }
+        .clock{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #fff;
+            font-size: 80px;
+            border: 1px solid gray;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="myCalculatorDisplay" class="clock">
+
+    </div>
+        <script>
+            function showTime(){
+                const date = new Date();
+                const hours = date.getHours();
+                const minute = date.getMinutes();
+                const Secands = date.getSeconds();
+                // const session = "AM";
+
+                // if(hours == 0){
+                //     hours=12;
+                // }
+                // if(hours > 12){
+                //     hours = hours - 12;
+                //     session = "PM"
+                // }
+
+                // hours = (hours <10) ? "0" + hours : hours;
+                // minute = (minute <10) ? "0" + minute : minute;
+                // Secands = (Secands <10) ? "0" + Secands : Secands;
+
+
+                const time = hours + ":" + minute + ":" + Secands;
+                document.getElementById("myCalculatorDisplay").innerText = time;
+                document.getElementById("myCalculatorDisplay").innerContent = time;
+
+                setTimeout(showTime,1000);
+            }
+            showTime();
+        </script>
+    
+</body>
+</html>
